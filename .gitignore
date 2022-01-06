@@ -1,0 +1,13 @@
+# General
+.DS_Store
+.idea
+**/node_modules
+**/*.log
+**/.env
+
+# Backend
+backend/.keystone/admin
+backend/keystone.db
+
+# Frontend
+frontend/.next
