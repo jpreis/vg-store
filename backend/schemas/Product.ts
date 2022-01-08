@@ -3,6 +3,11 @@ import { integer, relationship, select, text } from "@keystone-6/core/fields";
 
 export const Product = list({
   // TODO: access
+  ui: {
+    listView: {
+      initialColumns: ["name"],
+    },
+  },
   fields: {
     name: text({
       validation: {

@@ -1,13 +1,21 @@
 import "../styles/index.css";
 import type { AppProps } from "next/app";
 import { PageLayout } from "../components/page-layout";
-import { useRouter } from "next/router";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: process.env.NEXT_PUBLIC_API_ENDPOINT,
+  cache: new InMemoryCache(),
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
+  console.log(client);
   return (
-    <PageLayout>
-      <Component {...pageProps} />
-    </PageLayout>
+    <ApolloProvider client={client}>
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </ApolloProvider>
   );
 }
 

@@ -3,11 +3,12 @@
 .idea
 **/node_modules
 **/*.log
-**/.env
 
 # Backend
 backend/.keystone/admin
 backend/keystone.db
+backend/.env
 
 # Frontend
 frontend/.next
+frontend/.env.local

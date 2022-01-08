@@ -8,7 +8,9 @@ export const PageLayout: FC = ({ children }) => {
       <div className="container mx-auto px-4 py-24 overflow-scroll h-full">
         {children}
       </div>
-      <div className="bg-indigo-900 text-white p-5">foo</div>
+      <div className="bg-indigo-900 text-white px-5 py-10">
+        &copy; {new Date().getUTCFullYear()} The Item Shop
+      </div>
     </div>
   );
 };
