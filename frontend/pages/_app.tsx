@@ -9,7 +9,6 @@ const client = new ApolloClient({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(client);
   return (
     <ApolloProvider client={client}>
       <PageLayout>
