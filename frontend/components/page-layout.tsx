@@ -3,7 +3,7 @@ import { Header } from "./header";
 
 export const PageLayout: FC = ({ children }) => {
   return (
-    <div className="h-screen bg-white">
+    <div className="h-screen">
       <Header />
       <div className="container mx-auto px-4 py-24 overflow-scroll h-full">
         {children}

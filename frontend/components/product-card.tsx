@@ -9,7 +9,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { name, price, cover, status } = product;
 
   const productImage = (
-    <div className="bg-slate-100 aspect-square">
+    <div className="bg-slate-100 dark:bg-slate-700 aspect-square">
       <img
         src={cover.image.publicUrl}
         className={classNames(
@@ -38,7 +38,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   );
 
   return (
-    <div className="bg-white shadow-lg relative">
+    <div className="bg-white dark:bg-slate-800 shadow-lg relative">
       {priceTag}
       {productImage}
       <div className="px-5 py-10 flex flex-col gap-5">
