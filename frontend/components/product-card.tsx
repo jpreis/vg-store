@@ -29,8 +29,9 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
   const priceTag = (
     <div
-      className="bg-indigo-600 text-white font-bold inline-block p-3
-         absolute -top-2 -right-2 text-2xl shadow-lg rotate-6"
+      className="bg-indigo-600 text-white font-bold inline-block py-3 px-5 z-10 rounded-sm
+         absolute -top-2 -right-2 text-2xl shadow-lg rotate-6 bg-gradient-to-br from-indigo-400 to-indigo-700
+         border-b-[1px] border-indigo-900"
     >
       {toCurrencyString(price)}
     </div>
