@@ -6,7 +6,7 @@ export type Product = {
   price: number;
   description: string;
   status: StockStatus;
-  cover: ProductImage;
+  cover: ProductImage | null;
 };
 
 export type StockStatus = "IN_STOCK" | "OUT_OF_STOCK";

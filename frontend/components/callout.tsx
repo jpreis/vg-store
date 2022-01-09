@@ -22,7 +22,7 @@ export const Callout: FC<Props> = ({
     warning: "border-amber-500 bg-amber-500/20 text-amber-500",
     danger: "border-red-500 bg-red-500/20 text-red-500",
     success: "border-green-500 bg-green-500/20 text-green-500",
-    info: "border-blue-500 bg-blue-500/20 text-blue-500",
+    info: "border-indigo-500 bg-indigo-500/20 text-indigo-500",
     none: "border-current text-current-500",
   }[intent];
 

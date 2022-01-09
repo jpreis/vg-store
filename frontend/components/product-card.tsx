@@ -10,14 +10,16 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
   const productImage = (
     <div className="bg-slate-100 dark:bg-slate-700 aspect-square">
-      <img
-        src={cover.image.publicUrl}
-        className={classNames(
-          "object-contain w-full h-full",
-          status === "OUT_OF_STOCK" && "saturate-0"
-        )}
-        alt={cover.altText}
-      />
+      {cover && (
+        <img
+          src={cover.image.publicUrl}
+          className={classNames(
+            "object-contain w-full h-full",
+            status === "OUT_OF_STOCK" && "saturate-0"
+          )}
+          alt={cover.altText}
+        />
+      )}
     </div>
   );
 
@@ -29,19 +31,19 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
   const priceTag = (
     <div
-      className="bg-indigo-600 text-white font-bold inline-block py-3 px-5 z-10 rounded-sm
-         absolute -top-2 -right-2 text-2xl shadow-lg rotate-6 bg-gradient-to-br from-indigo-500 to-indigo-700
-         border-b-[1px] border-indigo-900"
+      className="bg-indigo-600 text-white font-bold inline-block py-3 px-5 z-10 rounded-md rotate-6
+         absolute -top-2 -right-2 text-2xl shadow-lg shadow-black/20 bg-gradient-to-br from-red-500 to-red-700
+         border-t-[1px] border-t-red-100/50 border-b-[1px] border-b-red-900"
     >
       {toCurrencyString(price)}
     </div>
   );
 
   return (
-    <div className="bg-white dark:bg-slate-800 shadow-lg relative">
+    <div className="bg-white dark:bg-slate-800 shadow-lg relative flex flex-col">
       {priceTag}
-      {productImage}
-      <div className="px-5 py-10 flex flex-col gap-5">
+      <div>{productImage}</div>
+      <div className="px-5 py-10 flex flex-col gap-5 h-full">
         <div>
           <StockIndicator status={status} className="mb-1" />
           {title}
@@ -49,7 +51,10 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
         {divider}
 
-        <Button disabled={status === "OUT_OF_STOCK"} className="self-end">
+        <Button
+          disabled={status === "OUT_OF_STOCK"}
+          className="self-end mt-auto"
+        >
           Add to cart
         </Button>
       </div>
