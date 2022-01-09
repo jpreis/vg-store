@@ -1,9 +1,10 @@
 import { NextPage } from "next";
+import { PageHeading } from "../components/page-heading";
 
 const Cart: NextPage = () => {
   return (
     <div>
-      <h2 className="text-5xl font-bold mb-10">Cart</h2>
+      <PageHeading>Cart</PageHeading>
     </div>
   );
 };
