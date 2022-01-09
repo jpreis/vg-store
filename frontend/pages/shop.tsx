@@ -4,6 +4,7 @@ import { Product } from "../types";
 import { ProductCard } from "../components/product-card";
 import { LoadingSpinner } from "../components/loading-spinner";
 import { ExclamationIcon } from "@heroicons/react/outline";
+import { Callout } from "../components/callout";
 
 const GET_PRODUCTS = gql`
   query {
@@ -34,10 +35,7 @@ const Shop: NextPage = () => {
 
   if (error)
     return (
-      <div className="bg-red-100 p-5 rounded-md flex items-center flex-col w-1/4 mx-auto">
-        <ExclamationIcon className="text-red-500 w-10 h-10" />
-        There was an error loading this page.
-      </div>
+      <Callout intent="warning">There was an error loading this page.</Callout>
     );
 
   const { products } = data!;

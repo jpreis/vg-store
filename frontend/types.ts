@@ -1,3 +1,5 @@
+// Model
+
 export type Product = {
   id: string;
   name: string;
@@ -19,3 +21,7 @@ export type ProductImage = {
 export type ProductCardProps = {
   product: Product;
 };
+
+// UI
+
+export type Intent = "warning" | "danger" | "success" | "info" | "none";
