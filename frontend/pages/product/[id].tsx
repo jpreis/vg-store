@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { Callout } from "../../components/callout";
 import Head from "next/head";
 
-
 const ProductDetails: NextPage = () => {
   const { query, isReady } = useRouter();
 

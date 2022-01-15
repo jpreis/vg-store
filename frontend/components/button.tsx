@@ -1,11 +1,11 @@
 import { FC } from "react";
 import classNames from "classnames";
 
-type Props = {
+type ButtonProps = {
   disabled?: boolean;
   className?: string;
 };
-export const Button: FC<Props> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   disabled = false,
   className,

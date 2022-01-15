@@ -12,9 +12,9 @@ const client = new ApolloClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-        <Head>
-            <title>The Item Shop</title>
-        </Head>
+      <Head>
+        <title>The Item Shop</title>
+      </Head>
       <PageLayout>
         <Component {...pageProps} />
       </PageLayout>
