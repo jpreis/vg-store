@@ -6,7 +6,7 @@ import { ShoppingCartIcon } from "@heroicons/react/solid";
 
 export const Header = () => {
   return (
-    <div className="flex bg-white dark:bg-slate-900 items-center flex-col gap-2 md:flex-row md:gap-2 p-5 sticky top-0 border-b-4 border-indigo-500 z-20">
+    <div className="flex bg-white dark:bg-slate-900 items-center flex-col gap-2 md:flex-row md:gap-2 p-5 sticky top-0 border-b-4 border-indigo-500 z-20 shadow-md">
       <Logo />
       <NavLink href="/shop">Shop</NavLink>
       <NavLink href="/cart">

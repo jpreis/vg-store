@@ -8,6 +8,8 @@ import { LoadingSpinner } from "../../components/loading-spinner";
 import { useEffect } from "react";
 import { Callout } from "../../components/callout";
 import Head from "next/head";
+import Image from "next/image";
+import classNames from "classnames";
 
 const ProductDetails: NextPage = () => {
   const { query, isReady } = useRouter();
@@ -38,7 +40,7 @@ const ProductDetails: NextPage = () => {
     return <Callout intent="info">The specified product was not found</Callout>;
   }
 
-  const { name } = data.product;
+  const { name, cover, description } = data.product;
 
   return (
     <div>
@@ -46,7 +48,23 @@ const ProductDetails: NextPage = () => {
         <title>{name} - The Item Shop</title>
       </Head>
       <PageHeading>{name}</PageHeading>
-      {JSON.stringify(data, null, 2)}
+      <div className="flex flex-col items-center gap-10 md:grid md:grid-cols-[auto,1fr] md:items-start">
+        {!!cover && (
+          <div className="relative">
+            <img
+              src={cover.image.publicUrl}
+              alt={cover.altText}
+              className="overflow-hidden rounded-md shadow-lg"
+            />
+            <div
+              className={classNames(
+                "block w-full absolute left-0 top-0 bg-gradient-to-bl via-transparent from-white/75 h-3/4"
+              )}
+            />
+          </div>
+        )}
+        <p className="max-w-prose text-xl">{description}</p>
+      </div>
     </div>
   );
 };
