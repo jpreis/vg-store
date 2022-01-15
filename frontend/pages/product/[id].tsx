@@ -7,6 +7,8 @@ import { GET_PRODUCT_QUERY } from "../../queries";
 import { LoadingSpinner } from "../../components/loading-spinner";
 import { useEffect } from "react";
 import { Callout } from "../../components/callout";
+import Head from "next/head";
+
 
 const ProductDetails: NextPage = () => {
   const { query, isReady } = useRouter();
@@ -41,6 +43,9 @@ const ProductDetails: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>{name} - The Item Shop</title>
+      </Head>
       <PageHeading>{name}</PageHeading>
       {JSON.stringify(data, null, 2)}
     </div>
