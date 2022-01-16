@@ -19,7 +19,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
             src={cover.image.publicUrl}
             className={classNames(
               "object-contain w-full h-full relative",
-              status === "OUT_OF_STOCK" && "saturate-0"
+              status === "OUT_OF_STOCK" && " opacity-25"
             )}
             alt={cover.altText}
           />
@@ -42,9 +42,8 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
 
   const priceTag = (
     <div
-      className="bg-indigo-600 text-white font-bold inline-block py-3 px-5 z-10 rounded-md rotate-6
-         absolute -top-2 -right-2 text-2xl shadow-md shadow-black/20 bg-gradient-to-br from-red-500 to-red-700
-         border-t-[1px] border-t-red-100/50 border-b-[1px] border-b-red-900"
+      className="bg-indigo-600 text-white font-bold inline-block py-3 px-5 z-10 rounded-sm rotate-6
+         absolute -top-2 -right-2 text-2xl shadow-md shadow-black/20 bg-gradient-to-br from-red-400 to-red-600"
     >
       {toCurrencyString(price)}
     </div>
