@@ -25,7 +25,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
           />
           <div
             className={classNames(
-              "block w-full transition-[height] absolute left-0 top-0 bg-gradient-to-bl via-transparent from-white/75",
+              "block w-full transition-[height] duration-300 absolute left-0 top-0 bg-gradient-to-bl via-transparent from-white/75",
               isHovered ? "h-3/4" : "h-1/2"
             )}
           />
@@ -52,7 +52,9 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   return (
     <div
       ref={hoverRef}
-      className="bg-white dark:bg-slate-800 shadow-lg relative flex flex-col rounded-md"
+      className={classNames(
+        "bg-white dark:bg-slate-800 shadow-lg hover:shadow-2xl relative flex flex-col rounded-md transition duration-300"
+      )}
     >
       {priceTag}
 
