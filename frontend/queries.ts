@@ -1,8 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const GET_PRODUCTS_QUERY = gql`
-  query ($searchTerm: String!) {
-    products(where: { name: { contains: $searchTerm } }) {
+  query GET_PRODUCTS_QUERY($searchTerm: String!, $skip: Int = 0, $take: Int) {
+    products(
+      skip: $skip
+      take: $take
+      orderBy: { name: asc }
+      where: { name: { contains: $searchTerm } }
+    ) {
       id
       name
       description
@@ -14,11 +19,12 @@ export const GET_PRODUCTS_QUERY = gql`
         }
       }
     }
+    productsCount
   }
 `;
 
 export const GET_PRODUCT_QUERY = gql`
-  query ($id: ID!) {
+  query GET_PRODUCT_QUERY($id: ID!) {
     product(where: { id: $id }) {
       id
       name
